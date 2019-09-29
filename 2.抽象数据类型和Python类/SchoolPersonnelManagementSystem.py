@@ -145,6 +145,18 @@ class Staff(Person):
                           "工资:" + str(self._salary)))
 
 
+class Postgraduate(Student):
+    def __init__(self, name, sex, birthday, department, pgrade):
+        Student.__init__(self, name, sex, birthday, department)
+        self._pgrade = pgrade
+
+
+class Teacher(Staff):
+    def __init__(self, name, sex, birthday, subject, entry_date=None):
+        Staff.__init__(self, name, sex, birthday, entry_date)
+        self._subject = subject
+
+
 if __name__ == "__main__":
     p1 = Person("谢雨洁", "女", (1995, 7, 30), "1201510111")
     p2 = Person("汪力强", "男", (1990, 2, 17), "1201380324")
